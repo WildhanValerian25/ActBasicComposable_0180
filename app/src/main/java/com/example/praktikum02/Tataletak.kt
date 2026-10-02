@@ -72,6 +72,14 @@ fun HalamanLoginCustom(modifier: Modifier = Modifier) {
                 modifier = Modifier.size(140.dp),
                 contentScale = ContentScale.Fit
             )
+            Spacer(modifier = Modifier.height(32.dp))
+
+            Text(
+                text = "Nama",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Red
+            )
         }
     }
 }
