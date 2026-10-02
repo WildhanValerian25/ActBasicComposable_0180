@@ -41,5 +41,11 @@ fun HalamanLoginCustom(modifier: Modifier = Modifier) {
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
         )
+        // Overlay transparan agar teks tetap terbaca
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.White.copy(alpha = 0.6f))
+        )
     }
 }
