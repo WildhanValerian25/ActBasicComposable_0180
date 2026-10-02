@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import com.example.praktikum02.ui.theme.Praktikum02Theme
 
@@ -19,7 +18,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Text(text = "Selamat Datang di Praktikum")
+                    // Memanggil fungsi desainmu di sini
+                    HalamanLoginCustom()
                 }
             }
         }
