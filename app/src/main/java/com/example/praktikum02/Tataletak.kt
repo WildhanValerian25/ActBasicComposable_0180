@@ -26,5 +26,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun HalamanLoginCustom(modifier: Modifier = Modifier) {
-
+    val gambarBackground = painterResource(id = R.drawable.gunung)
+    val logoUmy = painterResource(id = R.drawable.logo_umy)
+    val gambarLingkaran = painterResource(id = R.drawable.ultraman_profile)
 }
