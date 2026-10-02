@@ -80,6 +80,12 @@ fun HalamanLoginCustom(modifier: Modifier = Modifier) {
                 fontWeight = FontWeight.Medium,
                 color = Color.Red
             )
+            Text(
+                text = "Wildhan Valerian",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Blue
+            )
         }
     }
 }
