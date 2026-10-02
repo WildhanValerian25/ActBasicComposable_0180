@@ -47,5 +47,13 @@ fun HalamanLoginCustom(modifier: Modifier = Modifier) {
                 .fillMaxSize()
                 .background(Color.White.copy(alpha = 0.6f))
         )
+        // Lapisan Konten Utama
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+
+        }
     }
 }
