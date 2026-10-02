@@ -2,114 +2,124 @@ package com.example.praktikum02
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+// 1. Contoh Tataletak Column (Tumpuk ke bawah)
 @Composable
-fun HalamanLoginCustom(modifier: Modifier = Modifier) {
-    val gambarBackground = painterResource(id = R.drawable.gunung)
-    val logoUmy = painterResource(id = R.drawable.logo_umy)
-    val gambarLingkaran = painterResource(id = R.drawable.ultraman_profile)
-
-    Box(
-        modifier = modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        // Lapisan Background
-        Image(
-            painter = gambarBackground,
-            contentDescription = "Background Custom",
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxSize()
-        )
-        // Overlay transparan agar teks tetap terbaca
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.White.copy(alpha = 0.6f))
-        )
-        // Lapisan Konten Utama
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
-            Text(
-                text = "Login",
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Blue
-            )
-            Text(
-                text = "Ini adalah halaman login,",
-                fontSize = 16.sp,
-                color = Color.Black
-            )
-            Spacer(modifier = Modifier.height(24.dp))
-
-            Image(
-                painter = logoUmy,
-                contentDescription = "Logo UMY",
-                modifier = Modifier.size(140.dp),
-                contentScale = ContentScale.Fit
-            )
-            Spacer(modifier = Modifier.height(32.dp))
-
-            Text(
-                text = "Nama",
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Medium,
-                color = Color.Red
-            )
-            Text(
-                text = "Wildhan Valerian",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Blue
-            )
-            Text(
-                text = "20240140180",
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Black
-            )
-            Spacer(modifier = Modifier.height(32.dp))
-
-            Image(
-                painter = gambarLingkaran,
-                contentDescription = "Foto Custom",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(250.dp)
-                    .clip(CircleShape)
-                    .border(4.dp, Color.White, CircleShape)
-            )
-        }
+fun TataletakColumn(modifier: Modifier = Modifier) {
+    Column(modifier = modifier.padding(top = 20.dp, start = 20.dp, end = 20.dp)) {
+        Text(text = "Komponen1")
+        Text(text = "Komponen2")
+        Text(text = "Komponen3")
+        Text(text = "Komponen4")
     }
 }
 
-// Fitur ini untuk memunculkan gambar layout secara langsung di menu "Split" kanan atas
-@Preview(showBackground = true)
+// 2. Contoh Tataletak Row (Jajar ke samping)
 @Composable
-fun PreviewHalamanLogin() {
-    HalamanLoginCustom()
+fun TataletakRow(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        Text(text = "Komponen1")
+        Text(text = "Komponen2")
+        Text(text = "Komponen3")
+        Text(text = "Komponen4")
+    }
+}
+
+// 3. Contoh Tataletak Box (Tumpuk di satu tempat)
+@Composable
+fun TataletakBox(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .fillMaxHeight()
+            .fillMaxWidth(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(text = "Box 1")
+        Text(text = "Column 1")
+        Text(text = "Row 1")
+        Text(text = "Komponen 4")
+    }
+}
+
+// 4. Contoh Kombinasi Kompleks (Sesuai tugas akhir di materi)
+@Composable
+fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
+    // Pastikan kamu punya gambar ic_launcher_background di folder drawable
+    val gambar = painterResource(id = R.drawable.ic_launcher_background)
+
+    Column(modifier = modifier.fillMaxSize()) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(110.dp)
+                .background(color = Color.Yellow),
+            contentAlignment = Alignment.Center
+        ) {
+            Column {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Text(text = "Col1 Row1 Komponen1")
+                    Text(text = "Col1 Row1 Komponen2")
+                    Text(text = "Col1 Row1 Komponen3")
+                }
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Text(text = "Col1 Row2 Komponen1")
+                    Text(text = "Col1 Row2 Komponen2")
+                    Text(text = "Col1 Row2 Komponen3")
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(300.dp)
+                .background(color = Color.Cyan),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = gambar,
+                contentDescription = null,
+                contentScale = ContentScale.Fit
+            )
+            Text(
+                text = "MyImage",
+                fontSize = 50.sp,
+                color = Color.Red,
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Cursive
+            )
+        }
+    }
 }
