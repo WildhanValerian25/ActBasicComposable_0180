@@ -92,6 +92,17 @@ fun HalamanLoginCustom(modifier: Modifier = Modifier) {
                 fontWeight = FontWeight.Bold,
                 color = Color.Black
             )
+            Spacer(modifier = Modifier.height(32.dp))
+
+            Image(
+                painter = gambarLingkaran,
+                contentDescription = "Foto Custom",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size(250.dp)
+                    .clip(CircleShape)
+                    .border(4.dp, Color.White, CircleShape)
+            )
         }
     }
 }
