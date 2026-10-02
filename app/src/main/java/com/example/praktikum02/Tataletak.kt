@@ -106,3 +106,10 @@ fun HalamanLoginCustom(modifier: Modifier = Modifier) {
         }
     }
 }
+
+// Fitur ini untuk memunculkan gambar layout secara langsung di menu "Split" kanan atas
+@Preview(showBackground = true)
+@Composable
+fun PreviewHalamanLogin() {
+    HalamanLoginCustom()
+}
