@@ -34,6 +34,12 @@ fun HalamanLoginCustom(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-
+        // Lapisan Background
+        Image(
+            painter = gambarBackground,
+            contentDescription = "Background Custom",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
     }
 }
