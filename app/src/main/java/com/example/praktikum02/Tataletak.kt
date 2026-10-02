@@ -64,6 +64,14 @@ fun HalamanLoginCustom(modifier: Modifier = Modifier) {
                 fontSize = 16.sp,
                 color = Color.Black
             )
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Image(
+                painter = logoUmy,
+                contentDescription = "Logo UMY",
+                modifier = Modifier.size(140.dp),
+                contentScale = ContentScale.Fit
+            )
         }
     }
 }
